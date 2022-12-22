@@ -1,0 +1,42 @@
+import styled from "styled-components";
+import tw from "twin.macro";
+
+const BaseButton = styled.button`
+  ${tw`
+    p-[.75rem 1.25rem .75rem 1.25rem]
+    outline-none
+    rounded-md
+    text-white
+    text-xs
+    font-semibold
+    border-transparent
+    border-2
+    border-solid
+    focus:outline-none
+    transition-all
+    duration-200
+    ease-in-out
+    m-1
+ `}
+`;
+
+const OutlinedButton = styled(BaseButton)`
+  ${tw`
+    bg-red-500
+    hover:bg-transparent
+    hover:text-red-500
+    hover:border-red-500
+    `}
+`;
+const FilledButton = styled(BaseButton)`
+  ${tw`
+    border-red-500
+    text-red-500
+    bg-transparent
+    hover:bg-red-500
+    hover:text-white
+    hover:border-transparent
+    `}
+`;
+
+export { OutlinedButton, FilledButton };
