@@ -6,6 +6,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { ICar } from "../../../typings/car";
+
+
 import {
   CarContainer,
   CarDetail,
@@ -41,7 +43,7 @@ export const Car: React.FC<ICarProps> = ({
       <CarName>{name}</CarName>
       <PricesContainer>
         <DailyPrice>
-         ${dailyPrice}
+          ${dailyPrice}
           <SmallText>/Day</SmallText>
         </DailyPrice>
         <MonthlyPrice>
@@ -70,7 +72,7 @@ export const Car: React.FC<ICarProps> = ({
           <CarInfo>{gas}</CarInfo>
         </CarDetail>
       </CarDetailsContainer>
-      <RentButton text="Rent Now"/>
+      <RentButton text="Rent Now" />
     </CarContainer>
   );
 };
