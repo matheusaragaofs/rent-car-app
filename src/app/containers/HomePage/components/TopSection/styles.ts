@@ -57,6 +57,9 @@ const Description = styled.p`
 `;
 
 const BlobContainer = styled.div`
+  ${tw`
+    select-none
+  `}
   width: 20em;
   height: 10em;
   position: absolute;
@@ -94,6 +97,9 @@ const BlobContainer = styled.div`
 `;
 
 const StandaloneCar = styled.div`
+  ${tw`
+    select-none
+  `}
   width: auto;
   height: 10em;
   right: -6em;
