@@ -44,8 +44,7 @@ export const StepContainer = styled.div`
     hover:text-red-500
     `}
 `;
-export const Step = styled.div` 
-
+export const Step = styled.div`
   ${tw`
     shadow-md
     flex
