@@ -4,6 +4,7 @@ import { BookCard } from "../../components/BookCard";
 import Navbar from "../../components/Navbar";
 import { AboutUs } from "./components/AboutUs";
 import { BookingSteps } from "./components/BookingSteps";
+import { TopCars } from "./components/TopCars";
 import TopSection from "./components/TopSection";
 import { PageContainer } from "./styles";
 
@@ -18,6 +19,8 @@ export function HomePage() {
       <BookingSteps />
       <Marginer direction="vertical" margin="5em" />
       <AboutUs />
+      <Marginer direction="vertical" margin="5em" />
+      <TopCars/>
     </PageContainer>
   );
 }
