@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tw from "twin.macro";
 
 const LogoContainer = styled.div`
@@ -8,13 +8,14 @@ const LogoContainer = styled.div`
     `}
 `;
 
-const LogoText = styled.div`
+const LogoText = styled.div<{ color?: any }>`
   ${tw`
     text-xl
     md:text-2xl
     font-bold
-    text-black
-    m-1`}
+    m-1
+    `}
+  ${({ color }) => (color === "white" ? tw`text-white` : tw`text-black`)}
 `;
 
 const Image = styled.div`
