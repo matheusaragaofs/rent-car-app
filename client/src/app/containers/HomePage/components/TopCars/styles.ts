@@ -51,3 +51,13 @@ export const EmptyCarsContainer = styled.div`
         
     `}
 `
+export const LoadingContainer = styled.div`
+    ${tw`
+        w-full
+        flex
+        m-10
+        p-10
+        justify-center
+        
+    `}
+`
