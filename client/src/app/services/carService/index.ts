@@ -3,7 +3,7 @@ import { GetCars, GetCars_cars } from "../__generated__/GetCars";
 import { GET_ALL_CARS } from "./queries";
 
 class CarService {
-  public async getCars(): Promise<GetCars | undefined> {
+  public async getCars(): Promise<GetCars_cars[]> {
     const response = await apolloClient
       .query({
         query: GET_ALL_CARS,
@@ -11,7 +11,9 @@ class CarService {
       .catch((err) => {
         throw err;
       });
-    if (response && response.data) return response.data;
+    if (response && response.data && response.data.cars)
+      return response.data.cars;
+    return [];
   }
 }
 

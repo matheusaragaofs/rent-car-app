@@ -7,12 +7,22 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import carService from "../../../../services/carService";
 import { SCREENS } from "../../../../config/responsive";
+import { Dispatch } from "@reduxjs/toolkit";
+import { GetCars_cars } from "../../../../services/__generated__/GetCars";
+import { setTopCars } from "../../slice";
+import { useDispatch } from "react-redux";
+
+const actionDispatch = (dispatch: Dispatch) => ({
+  setTopCars: (cars: GetCars_cars[]) => dispatch(setTopCars(cars)),
+});
 
 export const TopCars: React.FC = () => {
+  const { setTopCars } = actionDispatch(useDispatch());
+
   useEffect(() => {
     const getCars = async () => {
       const response = await carService.getCars();
-      setCars(response?.cars);
+      if (response) setTopCars(response);
     };
     getCars();
   }, []);
