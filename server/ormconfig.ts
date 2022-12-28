@@ -6,9 +6,9 @@ export const ormconfig = {
   password: '123321',
   database: 'yourcar',
   entities: ['dist/**/entities/*{.ts,.js}'],
-  synchronize: false,
-  dropSchema: true,
+  synchronize: true,
   migrations: ['dist/migrations/*{.ts,.js}'],
+  autoLoadEntities: true,
   cli: {
     migrationsDir: 'src/migrations',
   },

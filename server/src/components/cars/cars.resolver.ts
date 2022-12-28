@@ -8,17 +8,19 @@ import { NewCarInput } from './dto/new-car-input';
 export class CarsResolver {
   constructor(private carsService: CarsService) {}
 
-  @Query((returns) => String)
-  public async cars(): Promise<any> {
-    return await this.carsService.getAllCars().catch((err) => {
-      console.log('err', err);
-      throw err;
-    });
+  @Query((returns) => [Car])
+  public async cars(): Promise<Car[]> {
+    try {
+      const cars = await this.carsService.getAllCars();
+      return cars;
+    } catch (error) {
+      console.log('error =>>>', error);
+    }
   }
 
   @Mutation((returns) => Car)
   public async addNewCar(
-    @Args('newCarDadata') newCarData: NewCarInput,
+    @Args('newCarData') newCarData: NewCarInput,
   ): Promise<Car> {
     return await this.carsService.addCar(newCarData).catch((err) => {
       throw err;
