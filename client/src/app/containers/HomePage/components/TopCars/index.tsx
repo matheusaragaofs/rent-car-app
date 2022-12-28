@@ -35,7 +35,7 @@ export const TopCars: React.FC = () => {
     const getCars = async () => {
       setLoading(true);
       const response = await carService.getCars();
-      await wait(3000);
+      // await wait(3000);
       if (response) setTopCars(response);
       setLoading(false);
     };
