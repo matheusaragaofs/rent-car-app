@@ -39,3 +39,15 @@ export const CarsContainer = styled.div`
         
     `}
 `;
+
+export const EmptyCarsContainer = styled.div`
+    ${tw`
+        w-full
+        flex
+        m-10
+        p-10
+        justify-center
+        shadow-lg
+        
+    `}
+`

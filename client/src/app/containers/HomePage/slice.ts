@@ -1,4 +1,5 @@
-import { Action, createSlice } from "@reduxjs/toolkit";
+import { Action, createSelector, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
 import { IHomePageState } from "./type";
 
 const initialState: IHomePageState = {
@@ -6,7 +7,7 @@ const initialState: IHomePageState = {
 };
 
 export const homePageSlice = createSlice({
-  name: "homepage",
+  name: "homePage",
   initialState,
   reducers: {
     setTopCars: (state, action) => {
@@ -17,3 +18,11 @@ export const homePageSlice = createSlice({
 
 export const { setTopCars } = homePageSlice.actions;
 export default homePageSlice.reducer;
+
+
+export const memoizedTopCars = createSelector(
+  (state: RootState) => state.homePage.topCars,
+  (cars) => {
+    return cars;
+  }
+);
