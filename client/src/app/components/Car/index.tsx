@@ -28,7 +28,7 @@ interface ICarProps extends ICar {}
 
 export const Car: React.FC<ICarProps> = ({
   name,
-  thumbnailSrc,
+  thumbnailUrl,
   dailyPrice,
   monthlyPrice,
   mileage,
@@ -38,7 +38,7 @@ export const Car: React.FC<ICarProps> = ({
   return (
     <CarContainer>
       <CarThumbnail>
-        <img src={thumbnailSrc} />
+        <img src={thumbnailUrl} />
       </CarThumbnail>
       <CarName>{name}</CarName>
       <PricesContainer>
